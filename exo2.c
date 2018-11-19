@@ -1,13 +1,16 @@
 
 #include <stdio.h>
 
+#define VRAI 1
+#define FAUX 0
+
 #define TOUT 0
 #define PAIR 1
 #define IMPAIR 2
 
 int estPair( int n ) {
-	if (n%2==0) return 1;
-	else return 0;
+	if (n%2==0) return VRAI;
+	else return FAUX;
 }
 
 void afficheEntiersAvecParite(int n, int parite) {
@@ -15,11 +18,11 @@ void afficheEntiersAvecParite(int n, int parite) {
 	for(i=0;i<=n;i+=1) {
 		switch (parite) {
 		case TOUT: printf(" i=%d\n",i); break;
-		case PAIR: if (estPair(i)==1) {
+		case PAIR: if (estPair(i)==VRAI) {
 		 	printf(" i=%d\n",i);
 		 	}
 		 	break;
-		case IMPAIR: if (estPair(i)==0) {
+		case IMPAIR: if (estPair(i)==FAUX) {
 		 	printf(" i=%d\n",i);
 		 	}
 		 	break;	
